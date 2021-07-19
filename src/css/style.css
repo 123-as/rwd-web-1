@@ -63,6 +63,10 @@ body {
   font-weight: 300;
 }
 
+body.noscroll {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
   color: #9698a6;
@@ -115,6 +119,11 @@ button, .button {
   }
 }
 
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .header.open .hamburger > span:first-child {
   -webkit-transform: translateY(8px) rotate(45deg);
           transform: translateY(8px) rotate(45deg);
@@ -129,26 +138,34 @@ button, .button {
           transform: translateY(-8px) rotate(-45deg);
 }
 
+.header.open .header-menu {
+  -webkit-animation: fade-in 200ms ease-in-out  forwards;
+          animation: fade-in 200ms ease-in-out  forwards;
+}
+
 .header.open .overlay {
-  -webkit-animation: fade-in 300ms ease-in-out  forwards;
-          animation: fade-in 300ms ease-in-out  forwards;
+  -webkit-animation: fade-in 200ms ease-in-out  forwards;
+          animation: fade-in 200ms ease-in-out  forwards;
 }
 
 .header .overlay {
   position: fixed;
-  top: 3.75rem;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   background: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
   background: linear-gradient(#2d314d, transparent);
   visibility: hidden;
-  -webkit-animation: fade-out 300ms ease-in-out  forwards;
-          animation: fade-out 300ms ease-in-out  forwards;
+  -webkit-animation: fade-out 200ms ease-in-out  forwards;
+          animation: fade-out 200ms ease-in-out  forwards;
 }
 
 .header nav {
-  padding: 1.0625rem 1.5rem;
+  position: relative;
+  background-color: white;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 
 .header nav .logo img {
@@ -210,5 +227,25 @@ button, .button {
 
 .header-btn:hover {
   opacity: 0.75;
+}
+
+.header-menu {
+  visibility: hidden;
+  padding: 1.625rem;
+  background: white;
+  margin: 0 1.5rem;
+  position: absolute;
+  width: calc(100% - 3rem);
+  margin-top: 1.5rem;
+  border-radius: 5px;
+  -webkit-animation: fade-out 200ms ease-in-out  forwards;
+          animation: fade-out 200ms ease-in-out  forwards;
+}
+
+.header-menu a {
+  color: #2d314d;
+  padding: 0.625rem;
+  display: block;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
