@@ -31,8 +31,23 @@ body{
 
 h1,h2,h3{
     margin-top: 0;
+    font-weight: 300;
+    color: $darkBlue;
+    line-height: 1.15;
+}
+h2{
+    font-size: 1.875rem;
+    margin-bottom: 1.5625rem;
+    @include breakpoint-up(large){
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
 }
 
+p{
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+}
 a{
     text-decoration: none;
     color: $grayishBlue;
@@ -84,12 +99,20 @@ button,.button{
     &-all{
         padding-left:  1.5rem;
         padding-right:  1.5rem;
-        padding-top: 2.25rem;
-        padding-bottom: 2.25rem;
+        padding-top: 4.375rem;
+        padding-bottom:4.375rem;
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
     }
     &-y{
-        padding-top: 2.25rem;
-        padding-bottom: 2.25rem;
+        padding-top: 4.375rem;
+        padding-bottom:4.375rem;
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
     }
     &-x{
         padding-left:  1.5rem;
@@ -102,9 +125,15 @@ button,.button{
         padding-right:  1.5rem;
     }
     &-t{
-        padding-top: 2.25rem;
+        padding-top: 4.375rem;
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+        }
     }
     &-b{
-        padding-bottom: 2.25rem;
+        padding-bottom: 4.375rem;
+        @include breakpoint-up(large){
+            padding-bottom: 6rem;
+        }
     }
 }
