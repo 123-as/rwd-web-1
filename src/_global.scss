@@ -1,11 +1,11 @@
 html{
     box-sizing: border-box;
-    font-size: 100%; //使em跟rem相同
+    font-size: 100%; //使em跟rem相同,默認em字體跟瀏覽器的大小一樣(rem)
 }
 
 
 
-*,*:before,*:after{
+*,*::before,*::after{
    box-sizing: inherit;
 }
 
@@ -63,9 +63,23 @@ button,.button{
     color:$white;
     display: inline-block;
     font-size: $font-sm;
-    transition: ease-in-out 300ms opacity;
+    overflow: hidden;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255,0);
+        transition: ease-in-out 300ms
+    }
     &:hover{
-        opacity: 0.75;
+       // opacity: 0.75;
+       &::before{
+        background-color: rgba(255, 255, 255,0.25);
+       }
     }
 }
 .flex{
